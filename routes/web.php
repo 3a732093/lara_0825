@@ -26,9 +26,11 @@ Route::get('/', function () {
     /*$posts=Post::all();
     dd($posts);*/
 
-    $posts=Post::find(7);
-    dd($posts);
+    /*$posts=Post::find(7);
+    dd($posts);*/
 
+    $posts=Post::where('id','<',10)->orderBy('id','DESC')->get();
+    dd($posts);
 
 });
 
