@@ -46,7 +46,7 @@ Route::get('/', function () {
     /*$posts=Post::find(5);
     $posts->delete();*/
 
-    Post::destroy(6);
+    Post::destroy(7,9,11);
 
 });
 
