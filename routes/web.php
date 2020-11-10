@@ -14,7 +14,7 @@ use App\Models\Post;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (){
 
     /*return view('welcome');*/
     /*
@@ -48,8 +48,12 @@ Route::get('/', function () {
 
     /*Post::destroy(7,9,11);*/
 
-    $allPosts=Post::all();
-    dd($allPosts);
+    /*$allPosts=Post::all();
+    dd($allPosts);*/
+
+
+    $featuredPosts=Post::where('is_feature',0)->get();
+    dd($featuredPosts);
 
 });
 
