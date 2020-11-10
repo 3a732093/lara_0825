@@ -29,8 +29,14 @@ Route::get('/', function () {
     /*$posts=Post::find(7);
     dd($posts);*/
 
-    $posts=Post::where('id','<',10)->orderBy('id','DESC')->get();
-    dd($posts);
+    /*$posts=Post::where('id','<',10)->orderBy('id','DESC')->get();
+    dd($posts);*/
+
+    $posts= Post::find(5);
+    $posts->update([
+       'title'=>'updated title',
+       'content'=>'updated content',
+    ]);
 
 });
 
@@ -42,9 +48,9 @@ Route::get('post',[PostsController::class,'show'])->name('posts.show');
 
 Route::get('contact',[PostsController::class,'contact'])->name('posts.contact');
 
-Post::create([
+/*Post::create([
         'title' =>'test title',
         'content' => 'test content',
-]);
+]);*/
 
 
