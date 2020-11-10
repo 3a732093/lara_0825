@@ -52,8 +52,11 @@ Route::get('/', function (){
     dd($allPosts);*/
 
 
-    $featuredPosts=Post::where('is_feature',0)->get();
-    dd($featuredPosts);
+    /*$featuredPosts=Post::where('is_feature',0)->get();
+    dd($featuredPosts);*/
+
+    $fourthPost=Post::find(8);
+    dd($fourthPost);
 
 });
 
