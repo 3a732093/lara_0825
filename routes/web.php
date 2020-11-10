@@ -22,6 +22,9 @@ Route::get('/', function () {
     $posts->title = 'test title';
     $posts->content = 'test content';
     $posts->save();*/
+
+    $posts=Post::all();
+    dd($posts);
 });
 
 Route::get('index',[PostsController::class,'index'])->name('posts.index');
