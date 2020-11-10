@@ -38,10 +38,13 @@ Route::get('/', function () {
        'content'=>'updated content',
     ]);*/
 
-    $posts = Post::find(6);
+   /* $posts = Post::find(6);
     $posts->title = 'saved title';
     $posts->content = 'saved content';
-    $posts->save();
+    $posts->save();*/
+
+    $posts=Post::find(5);
+    $posts->delete();
 
 });
 
