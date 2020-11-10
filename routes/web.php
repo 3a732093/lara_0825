@@ -17,10 +17,11 @@ use App\Models\Post;
 Route::get('/', function () {
 
     /*return view('welcome');*/
+    /*
     $posts = new Post();
     $posts->title = 'test title';
     $posts->content = 'test content';
-    $posts->save();
+    $posts->save();*/
 });
 
 Route::get('index',[PostsController::class,'index'])->name('posts.index');
@@ -30,5 +31,10 @@ Route::get('about',[PostsController::class,'about'])->name('posts.about');
 Route::get('post',[PostsController::class,'show'])->name('posts.show');
 
 Route::get('contact',[PostsController::class,'contact'])->name('posts.contact');
+
+Post::create([
+        'title' =>'test title',
+        'content' => 'test content',
+]);
 
 
