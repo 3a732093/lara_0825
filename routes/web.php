@@ -23,8 +23,13 @@ Route::get('/', function () {
     $posts->content = 'test content';
     $posts->save();*/
 
-    $posts=Post::all();
+    /*$posts=Post::all();
+    dd($posts);*/
+
+    $posts=Post::find(7);
     dd($posts);
+
+
 });
 
 Route::get('index',[PostsController::class,'index'])->name('posts.index');
