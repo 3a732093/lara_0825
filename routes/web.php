@@ -3,6 +3,7 @@
 use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,8 +59,14 @@ Route::get('/', function (){
     /*$fourthPost=Post::find(8);
     dd($fourthPost);*/
 
-    $lastPost=Post::orderBy('id','DESC')->first();
-     dd($lastPost);
+    /*$lastPost=Post::orderBy('id','DESC')->first();
+     dd($lastPost);*/
+
+     $post = Post::find(4);
+     foreach ($post->comments as $comment)
+     {
+         echo $comment->content.'<br>';
+     }
 
 });
 
