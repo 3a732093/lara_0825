@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Model\Comment;
 class Post extends Model
 {
     use HasFactory;
@@ -16,4 +16,9 @@ class Post extends Model
            'is_feature'
 
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
